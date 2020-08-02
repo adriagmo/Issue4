@@ -1,0 +1,43 @@
+<h1><i class="fa fa-user"></i> Empleados</h1>
+<h4>{{ Employee.nombre }}</h4>
+<hr>
+
+<div class="row">
+	<form ng-submit="guardarEmployee()">
+		
+		<div ng-hide="creando">
+			Código:
+			<br>
+			<input type="text" class="form-control" ng-model="employee.codigo" readonly="readonly">
+			<br>
+		</div>
+
+		Nombre:
+		<br>
+		<input type="text" class="form-control" ng-model="employee.nombre" required placeholder="Nombre del alumno">
+		<br>
+
+		Teléfono:
+		<br>
+		<input type="text" class="form-control" ng-model="employee.telefono" ui-mask="{{ telefonoMask }}" required>
+		<br>
+
+		Dirección:
+		<br>
+		<textarea class="form-control" ng-model="employee.direccion" rows="5" required placeholder="Dirección del Empleado"></textarea>
+		<br>
+		
+		<button type="submit" class="btn btn-primary">
+			<i class="fa fa-floppy-o"></i>
+			Guardar Cambios
+		</button>
+		
+
+		<br><br>
+		<p class="text-success animated fadeIn fast" ng-show="actualizado">Registro Actualizado</p>
+
+	</form>
+
+</div>
+
+
